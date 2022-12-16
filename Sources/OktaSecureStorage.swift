@@ -115,13 +115,7 @@ open class OktaSecureStorage: NSObject {
 
             var biometryAndPasscodeFlags = SecAccessControlCreateFlags()
             if behindBiometrics {
-                if #available(iOS 11.3, *) {
-                    biometryAndPasscodeFlags.insert(SecAccessControlCreateFlags.biometryCurrentSet)
-                } else {
-                    biometryAndPasscodeFlags.insert(SecAccessControlCreateFlags.touchIDCurrentSet)
-                }
-                biometryAndPasscodeFlags.insert(SecAccessControlCreateFlags.or)
-                biometryAndPasscodeFlags.insert(SecAccessControlCreateFlags.devicePasscode)
+                biometryAndPasscodeFlags.insert(SecAccessControlCreateFlags.userPresence)
             }
 
             var applicationPasswordFlag = SecAccessControlCreateFlags()
