@@ -115,7 +115,7 @@ open class OktaSecureStorage: NSObject {
 
             var biometryAndPasscodeFlags = SecAccessControlCreateFlags()
             if behindBiometrics {
-                biometryAndPasscodeFlags.insert(SecAccessControlCreateFlags.userPresence)
+                
             }
 
             var applicationPasswordFlag = SecAccessControlCreateFlags()
